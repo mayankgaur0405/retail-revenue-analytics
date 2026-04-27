@@ -38,6 +38,13 @@ This project strictly adheres to enterprise data processing standards:
 ### Power BI
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a2275329-ad85-4372-b7d5-dfbb9e1c352a" />
+<img width="1920" height="1063" alt="image" src="https://github.com/user-attachments/assets/61b47023-2d44-450f-b563-21f270225901" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e14a5d61-f0e3-495b-b57c-090186c4cee0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7152f6f6-91fc-4fee-96f5-a3413cb9c4c6" />
+
+
+
+
 
 
 ---
