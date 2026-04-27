@@ -57,6 +57,11 @@ st.sidebar.subheader("Filters")
 selected_stores = st.sidebar.multiselect("Select Store(s)", df['Store_ID'].unique(), default=df['Store_ID'].unique())
 selected_categories = st.sidebar.multiselect("Select Category(s)", df['Category'].unique(), default=df['Category'].unique())
 
+if 'Region' in df.columns:
+    selected_regions = st.sidebar.multiselect("Select Region(s)", df['Region'].unique(), default=df['Region'].unique())
+else:
+    selected_regions = []
+
 st.sidebar.markdown("---")
 st.sidebar.info(
     "**Project Concept:** Revenue Assurance & Forensic Analytics.\n\n"
@@ -64,10 +69,17 @@ st.sidebar.info(
 )
 
 # Apply filters
-filtered_df = df[
-    (df['Store_ID'].isin(selected_stores)) & 
-    (df['Category'].isin(selected_categories))
-]
+if 'Region' in df.columns:
+    filtered_df = df[
+        (df['Store_ID'].isin(selected_stores)) & 
+        (df['Category'].isin(selected_categories)) &
+        (df['Region'].isin(selected_regions))
+    ]
+else:
+    filtered_df = df[
+        (df['Store_ID'].isin(selected_stores)) & 
+        (df['Category'].isin(selected_categories))
+    ]
 
 # ==========================================
 # MAIN DASHBOARD - KPI METRICS
@@ -145,8 +157,12 @@ with tab3:
     st.write("Export this list for investigation.")
     
     if len(anomalies_df) > 0:
+        display_cols = ['Transaction_ID', 'Date', 'Store_ID', 'Category', 'Transaction_Type', 'Sales_Amount', 'Anomaly_Score']
+        if 'Region' in anomalies_df.columns:
+            display_cols.insert(3, 'Region')
+            
         st.dataframe(
-            anomalies_df[['Transaction_ID', 'Date', 'Store_ID', 'Category', 'Transaction_Type', 'Sales_Amount', 'Anomaly_Score']].sort_values('Anomaly_Score'),
+            anomalies_df[display_cols].sort_values('Anomaly_Score'),
             use_container_width=True,
             hide_index=True
         )
