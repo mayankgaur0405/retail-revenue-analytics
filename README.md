@@ -35,6 +35,12 @@ This project strictly adheres to enterprise data processing standards:
 * **Power BI:** The processed pipeline data is actively digested by Microsoft Power BI Desktop for C-suite demographic slicers and KPI tracking.
 
 ---
+### Power BI
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a2275329-ad85-4372-b7d5-dfbb9e1c352a" />
+
+
+---
 
 ## 🛠️ Technology Stack
 * **Database Engine:** SQLite3
